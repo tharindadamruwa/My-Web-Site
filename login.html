@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initlal-scale=1">
+
+  <title>Admin Login</title>
+
+  <style type="text/css" media="all">
+
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&family=Roboto+Mono:wght@500&display=swap');
+
+    body {
+      font-family: Sans-Serif;
+      background: url(tt.jpg);
+    }
+
+    .header {
+      color: white;
+      font-family: 'Bakbak One', cursive;
+      font-size: 20px;
+      text-align: center;
+    }
+    .adminolny {
+      color: white;
+      text-align: center;
+      font-size: 8px;
+      font-weight: bold;
+    }
+    .login-form {
+      position: fixed;
+      width: 330px;
+      text-align: center;
+      margin-top: 30px;
+      border: 2px solid white;
+      border-radius: 10px;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+
+    .login-form label {
+      color: white;
+      font-family: 'Roboto Mono', monospace;
+    }
+
+    .login-form input {
+      outline: none;
+      border: 1px solid white;
+      width: 270px;
+      height: 27px;
+      border-radius: 4px;
+      font-weight: bold;
+      padding: 2px;
+    }
+
+    .item {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    #submit {
+      background: black;
+      font-family: 'Roboto Mono', monospace;
+      color: white;
+      height: 25px;
+      width: 100px;
+      border: 1px solid white;
+      border-radius: 3px;
+    }
+
+    #submit:active {
+      background: white;
+      color: black;
+    }
+    
+    .error-or-success {
+      color: white;
+      font-size: 15px;
+      text-align: center;
+      font-family: 'Roboto Mono', monospace;
+      display: none;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="header">
+    Admin Login
+  </div>
+  <div class="adminolny">
+    Admin-Only
+  </div>
+
+  <div class="login-form">
+
+    <div class="item">
+      <label for="name">Enter Your Name</label><br>
+
+      <input placeholder="Name" class="name" type="text" name="name" id="name" />
+    </div>
+
+    <div class="item">
+
+      <label for="name">Enter Your Password</label><br>
+
+      <input placeholder="Password" class="password" type="password" name="password" id="password" />
+
+    </div>
+
+    <div class="item">
+
+      <button onclick="submit()" class="submit" id="submit" type="submit">Login</button>
+
+    </div>
+
+    <p id="error-or-success" class="error-or-success">Hi</p>
+
+  </div>
+
+  <script type="text/javascript" charset="utf-8">
+    
+    function submit() {
+      
+      var name = document.getElementById("name").value;
+      
+      var password = document.getElementById("password").value;
+      
+      if (name == "tharindadamruwan") {
+        
+        if (password == "chandraTR2006;") {
+          
+          window.location = "admin.php";
+          
+        }
+        else {
+          document.getElementById("error-or-success").innerText = "Login Error";
+          document.getElementById("error-or-success").style.color = "red";
+          document.getElementById("error-or-success").style.display = "block";
+        }
+        
+      }
+      else {
+        document.getElementById("error-or-success").innerText = "Login Error";
+          document.getElementById("error-or-success").style.color = "red";
+          document.getElementById("error-or-success").style.display = "block";
+      }
+      
+    }
+    
+  </script>
+
+</body>
+
+</html>
